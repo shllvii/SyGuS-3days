@@ -19,7 +19,7 @@ def solve(fnName, fnDef, productions, checker):
   hashSet = set([Opt.reduceHash([startSym])])
   count = 0
   while (not bfsQueue.empty()):
-    prog, key = bfsQueue.pop()
+    key, prog = bfsQueue.pop()
 
     count += 1
 

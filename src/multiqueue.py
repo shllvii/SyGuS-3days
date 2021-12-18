@@ -1,18 +1,23 @@
-from functools import reduce
-from utils import log
-from utils.sortedcollections import SortedDict
+import heapq
 
 class queue:
+  class queueItem:
+    def __init__(self, key, value):
+      self.key = key
+      self.value = value
+    def __lt__(self, other): 
+      return self.key < other.key
+    def asTuple(self):
+      return self.key, self.value
+
+   
   def __init__(self, productions) -> None:
     self.productions = productions
-    self.queues = SortedDict()
+    self.queue = []
     self.count = 0
   
   def empty(self) -> bool:
-    if len(self.queues) == 0:
-      return True
-    empty = reduce(lambda a, b : a and b, [not bool(item[1]) for item in self.queues.items()])
-    return empty
+    return not bool(self.queue)
   
   def countNonTerminal(self, prog) -> int:
     count = 0
@@ -50,7 +55,7 @@ class queue:
     lengthID = length
     terminalID = numNonTerminal
     depthID = depth
-    return (lengthID * 4) + (terminalID * 2) + (depthID)
+    return (lengthID * 4) + (terminalID * 2) + (depthID) 
 
   def push(self, prog, length : int = -1, numNonTerminal : int = -1, depth : int = -1):
     if length < 0:
@@ -61,24 +66,14 @@ class queue:
       depth = self.countDepth(prog)
 
     bucket = self.getBucket(length, depth, numNonTerminal)
-    if not bucket in self.queues:
-      self.queues[bucket] = []
-    self.queues[bucket].append(prog)
+    heapq.heappush(self.queue, queue.queueItem(bucket, prog))
 
     self.count += 1
 
   def pop(self):
-    for k, v in self.queues.items():
-      if bool(v):
-        ret = v.pop(0)
-        if not bool(v):
-          self.queues.pop(k)
-        return ret, k
-      else:
-        self.queues.pop(k)
+    return heapq.heappop(self.queue).asTuple()
   
 if __name__ == '__main__':
-  # remove `log` before testing
   q = queue(None)
   q.push([2], 1, 2, 1)
   q.push([1], 2, 1, 1)

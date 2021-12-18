@@ -1,4 +1,5 @@
 from utils import translator
+from utils.logger import log
 from .preprocess import reduce
 
 
@@ -26,20 +27,22 @@ def solve(fnName, fnDef, productions, checker):
   args = productions["Args"]
   idxs = productions["Literals"]
 
-  # max
 
-  liss = [args[1:], list(zip(args[:-1], idxs[:-1]))]
-  arguments = [[args[0]], [args[-1], idxs[-1]]]
-  conds = [lambda hd, args: ['<=', hd, args[0]], lambda hd, args: ['<=', args[0], hd[0]]]
-  fnthen = [(0, lambda hd, args: args), (1, lambda hd, args: hd[1])]
-  fnelse = [(0, lambda hd, args: [hd]), (0, lambda hd, args: args)]
-  bounds = [lambda args: args[0], lambda args: args[1]]
+  try:
+    liss = [args[1:], list(zip(args[:-1], idxs[:-1]))]
+    arguments = [[args[0]], [args[-1], idxs[-1]]]
+    conds = [lambda hd, args: ['<=', hd, args[0]], lambda hd, args: ['<=', args[0], hd[0]]]
+    fnthen = [(0, lambda hd, args: args), (1, lambda hd, args: hd[1])]
+    fnelse = [(0, lambda hd, args: [hd]), (0, lambda hd, args: args)]
+    bounds = [lambda args: args[0], lambda args: args[1]]
 
-  for strategy in zip(liss, arguments, conds, fnthen, fnelse, bounds):
-    prog = generate(*strategy)
-    candidate = passCheck(prog)
-    if candidate != None:
-      return candidate
+    for strategy in zip(liss, arguments, conds, fnthen, fnelse, bounds):
+      prog = generate(*strategy)
+      candidate = passCheck(prog)
+      if candidate != None:
+        return candidate
+  except:
+    log("pattern failed")
   
   return None
   
