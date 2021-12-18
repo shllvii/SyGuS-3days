@@ -6,8 +6,10 @@ import subprocess
 import sys
 import time
 import signal
-import utils.sexp as sexp
-import utils.translator as translator
+from utils import sexp
+# import utils.sexp as sexp
+from utils import translator
+# import utils.translator as translator
 import re
 import random
 
@@ -33,6 +35,7 @@ def stripComments(bmFile):
 def run_command(cmd, timeout=60):
     is_linux = platform.system() == "Linux"
 
+    print(cmd)
     p = subprocess.Popen(
         cmd,
         #stderr=subprocess.DEVNULL,
@@ -53,6 +56,7 @@ def run_command(cmd, timeout=60):
         os.killpg(p.pid, signal.SIGKILL)
         raise TimeoutError()
     return out.decode("UTF-8"), rtimepassed
+
 def tokenize_for_bleu_eval(code):
     code = re.sub(r'([^A-Za-z0-9_])', r' \1 ', code)
         #code = re.sub(r'([a-z])([A-Z])', r'\1 \2', code)
@@ -73,7 +77,7 @@ def my_test(cmd, outputfile, testname, timeout=300):
     res = 0
     benchmarkFile = open(testname, encoding="utf-8")
     bm = stripComments(benchmarkFile)
-    bmExpr = sexp.sexp.parseString(bm, parseAll=True).asList()[
+    bmExpr = sexp.parseString(bm, parseAll=True).asList()[
         0
     ]
     if "(set-logic BV)" in bm:
@@ -129,7 +133,7 @@ if __name__ == "__main__":
     outfile = open(testresultfile, "w")
     toexe = mainprogram+" "
     outfile.write( "start testing: \n")
-    cmd = "python3 "
+    cmd = "python "
 
     for j, testgroup in enumerate([open_bv_tests, open_tests]):
         for test in os.listdir(testgroup):
