@@ -22,6 +22,8 @@ def reduce(fnName, productions):
         elif (cand[0] == '<' ) or (cand[0] == '>'):
           cand[0] = '<'
           lg, lgRHS = True, cand
+        elif cand[0] == 'bvadd':
+          new_v.insert(0, cand)
         else:
           opset.add(cand[0])
           new_v.append(cand)

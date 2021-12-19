@@ -129,7 +129,7 @@ def ReadQuery(bmExpr):
             self.solver.add(Not(spec))
             if verbose:
                 print("spec:", spec)
-
+            
             res = self.solver.check()
             if res == unsat:
                 self.solver.pop()

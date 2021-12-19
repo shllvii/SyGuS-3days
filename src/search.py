@@ -6,7 +6,7 @@ from utils import Extend
 import utils.translator as translator
 
 def solve(fnName, fnDef, productions, checker):
-  try:
+  if True:
     productions = reduce(fnName, productions)
     Opt.productions = productions
     
@@ -19,7 +19,6 @@ def solve(fnName, fnDef, productions, checker):
     count = 0
     while (not bfsQueue.empty()):
       key, prog = bfsQueue.pop()
-
       count += 1
 
       exts = Extend(prog, productions)
@@ -45,6 +44,5 @@ def solve(fnName, fnDef, productions, checker):
           hashSet.add(hsh)
         # else:
         #   print("bad", ext)
-  except:
-    log("search failed", level=1)
-    return None
+  log("search failed", level=1)
+  return None

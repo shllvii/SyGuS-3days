@@ -24,7 +24,7 @@ class queue:
     for term in prog:
       if type(term) == list:
         count += self.countNonTerminal(term)
-      elif term == tuple:
+      elif type(term) == tuple:
         continue
       elif term in self.productions:
         count += 1
