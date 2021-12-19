@@ -34,6 +34,7 @@ def stripComments(bmFile):
 
 def run_command(cmd, timeout=60):
     is_linux = platform.system() == "Linux"
+    is_windows = platform.system() == "Windows"
 
     print(cmd)
     p = subprocess.Popen(
@@ -53,7 +54,10 @@ def run_command(cmd, timeout=60):
         rtimepassed = timepassed.seconds + timepassed.microseconds / 1000000.0
     except subprocess.TimeoutExpired:
         #p.kill()
-        os.killpg(p.pid, signal.SIGKILL)
+        if is_windows:
+          os.kill(p.pid, signal.CTRL_C_EVENT)
+        else:
+          os.killpg(p.pid, signal.SIGKILL)
         raise TimeoutError()
     return out.decode("UTF-8"), rtimepassed
 
@@ -91,21 +95,21 @@ def my_test(cmd, outputfile, testname, timeout=300):
         cmd += testname
     # Parse string to python
     #print(cmd)
-    print(testname)
+    # print(testname)
     try:
         result, rtime = run_command(cmd, timeout)
-        print(result)
+        # print(result)
     except TimeoutError:
         outputfile.write("timeout after %i \n" % (timeout))
-        print("timeout after %i \n" % (timeout))
-        return 0
+        # print("timeout after %i \n" % (timeout))
+        # return 0
     else:
         resultlst = tokenize_for_bleu_eval(result)
         checker = translator.ReadQuery(bmExpr)
         try:
             checkresult = checker.check(result)
         except:
-            print("Invalid format", result)
+            # print("Invalid format", result)
             # outputfile.write('Wrong Answer: Invalid check result %s(%f)\n' %(result,rtime))
             outputfile.write("Invalid format\t%f\n" % (rtime))
         else:
@@ -113,17 +117,17 @@ def my_test(cmd, outputfile, testname, timeout=300):
                 outputfile.write("Passed\t%f\n" % (rtime))
                 res = 1
             else:
-                print("Wrong ", checkresult)
+                # print("Wrong ", checkresult)
                 # outputfile.write('Wrong Answer: get %s(%f)\n' %(result,rtime))
                 outputfile.write("Wrong Answer\t%f\n" % (rtime))
         for x in resultlst:
             if x == "define" or x == "func" or x == "_":
                 continue
             if bm.find(x) == -1:
-                print(x)
+                # print(x)
                 res = 0.5
                 break
-        print(res)
+        # print(res)
         return res
 
 
