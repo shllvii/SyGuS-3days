@@ -141,4 +141,4 @@ def ReadQuery(bmExpr):
                 return model
 
     checker = Checker(VarTable, synFunction, Constraints, AuxFuns)
-    return checker
+    return checker, Constraints

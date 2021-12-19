@@ -1,5 +1,5 @@
 from .optimize import Opt
-from .multiqueue import queue
+from .bfsqueue import queue
 from .preprocess import reduce
 from utils import log
 from utils import Extend
@@ -46,7 +46,5 @@ def solve(fnName, fnDef, productions, checker):
         # else:
         #   print("bad", ext)
   except:
-    log("damn", level=1)
+    log("search failed", level=1)
     return None
-
-  assert("No answer")
