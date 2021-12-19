@@ -177,11 +177,11 @@ def solve(fnName, fnDef, productions, constraints, checker):
     modified = modifyConstraints(constraints)
     flattened = flattenConstraints(modified)
     constraints = mergeConstraints(flattened)
-    # pprint.pprint(constraints)
+    pprint.pprint(constraints)
     assigns = extractAssign(constraints)
-    # pprint.pprint(assigns)
+    pprint.pprint(assigns)
     prog = construct(assigns)
-    # pprint.pprint(prog)
+    pprint.pprint(prog)
     ans = passCheck(prog)
     return ans
   except :

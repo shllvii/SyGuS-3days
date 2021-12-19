@@ -80,15 +80,15 @@ def my_test(cmd, outputfile, testname, timeout=300):
     bmExpr = sexp.parseString(bm, parseAll=True).asList()[
         0
     ]
-    # if "(set-logic BV)" in bm:
-    #     with open(tmp_test, "w") as oup:
-    #         for line in bm.split('\n')[1:-1]:
-    #             if is_constraint(line) and random.randint(0, 10) == 0:
-    #                 continue
-    #             oup.write(line + "\n")
-    #     cmd += tmp_test
-    # else:
-    cmd += testname
+    if "(set-logic BV)" in bm:
+        with open(tmp_test, "w") as oup:
+            for line in bm.split('\n')[1:-1]:
+                if is_constraint(line) and random.randint(0, 10) == 0:
+                    continue
+                oup.write(line + "\n")
+        cmd += tmp_test
+    else:
+      cmd += testname
     # Parse string to python
     #print(cmd)
     print(testname)
@@ -135,8 +135,8 @@ if __name__ == "__main__":
     outfile.write( "start testing: \n")
     cmd = "python3 "
 
-    # for j, testgroup in enumerate([open_bv_tests, open_tests]):
-    for j, testgroup in enumerate([open_tests]):
+    for j, testgroup in enumerate([open_bv_tests, open_tests]):
+    # for j, testgroup in enumerate([open_tests]):
         for test in os.listdir(testgroup):
             arg = testgroup + test
             s = my_test(cmd + toexe, outfile, arg, timeout)
