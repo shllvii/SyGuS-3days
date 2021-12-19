@@ -78,8 +78,11 @@ def solve(fnName, fnDef, productions, checker):
               # and (not type(strategy[5](strategy[1])) == tuple) \
         , strategies):
       prog = generate(*strategy)
+      # print(prog)
       candidate = passCheck(prog)
-      return candidate
+      if candidate != None:
+        return candidate
+    log("pattern find no solutions", level=1)
   except:
     log("pattern failed")
     return None

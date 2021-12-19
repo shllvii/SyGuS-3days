@@ -1,64 +1,64 @@
 start testing: 
-	./open_bv_tests/100_100.sl:Invalid format	0.373581
-	./open_bv_tests/106_100.sl:Invalid format	0.381645
-	./open_bv_tests/107_100.sl:Invalid format	0.358997
-	./open_bv_tests/10_100.sl:Invalid format	0.367571
-	./open_bv_tests/115_100.sl:Invalid format	0.388624
-	./open_bv_tests/118_100.sl:Invalid format	0.452932
-	./open_bv_tests/122_100.sl:Invalid format	0.455603
-	./open_bv_tests/125_100.sl:Invalid format	0.397631
-	./open_bv_tests/138_100.sl:Invalid format	0.362161
-	./open_bv_tests/144_100.sl:Invalid format	0.344469
-	./open_bv_tests/147_100.sl:Invalid format	0.351593
-	./open_bv_tests/150_100.sl:Invalid format	0.367574
-	./open_bv_tests/17_100.sl:Invalid format	0.349556
-	./open_bv_tests/18_100.sl:Invalid format	0.346161
-	./open_bv_tests/26_100.sl:Invalid format	0.349856
-	./open_bv_tests/28_100.sl:Invalid format	0.362064
-	./open_bv_tests/31_100.sl:Invalid format	0.385000
-	./open_bv_tests/40_100.sl:Invalid format	0.365707
-	./open_bv_tests/46_100.sl:Invalid format	0.348001
-	./open_bv_tests/55_100.sl:Invalid format	0.359001
-	./open_bv_tests/59_100.sl:Invalid format	0.365547
-	./open_bv_tests/61_100.sl:Invalid format	0.357161
-	./open_bv_tests/62_100.sl:Invalid format	0.358997
-	./open_bv_tests/66_100.sl:Invalid format	0.376588
-	./open_bv_tests/81_100.sl:Invalid format	0.359566
-	./open_bv_tests/83_100.sl:Invalid format	0.361224
-	./open_bv_tests/87_100.sl:Invalid format	0.358998
-	./open_bv_tests/92_100.sl:Invalid format	0.364594
-	./open_bv_tests/93_100.sl:Invalid format	0.361066
-	./open_bv_tests/97_100.sl:Invalid format	0.358625
-	./open_tests/array_search_10.sl:Passed	0.362997
-	./open_tests/array_search_11.sl:Passed	0.443197
-	./open_tests/array_search_12.sl:Passed	0.412568
-	./open_tests/array_search_13.sl:Passed	0.430135
-	./open_tests/array_search_14.sl:Passed	0.517354
-	./open_tests/array_search_15.sl:Passed	0.514614
-	./open_tests/array_search_2.sl:Passed	0.335201
-	./open_tests/array_search_3.sl:Passed	0.294001
-	./open_tests/array_search_4.sl:Passed	0.345005
-	./open_tests/array_search_5.sl:Passed	0.320000
-	./open_tests/array_search_6.sl:Passed	0.338591
-	./open_tests/array_search_7.sl:Passed	0.344599
-	./open_tests/array_search_8.sl:Passed	0.355994
-	./open_tests/array_search_9.sl:Passed	0.368569
-	./open_tests/max10.sl:Passed	0.340996
-	./open_tests/max12.sl:Passed	0.474561
-	./open_tests/max13.sl:Passed	0.581573
-	./open_tests/max14.sl:Passed	0.798793
-	./open_tests/max15.sl:Passed	1.052383
-	./open_tests/max2.sl:Passed	0.816189
-	./open_tests/max3.sl:Passed	0.272605
-	./open_tests/max4.sl:Passed	0.271999
-	./open_tests/max5.sl:Passed	0.283151
-	./open_tests/max6.sl:Passed	0.287002
-	./open_tests/max7.sl:Passed	0.294000
-	./open_tests/max8.sl:Passed	0.299589
-	./open_tests/max9.sl:Passed	0.328572
-	./open_tests/max_11.sl:Passed	0.405189
-	./open_tests/s1.sl:Passed	0.274004
-	./open_tests/s2.sl:Passed	0.259998
-	./open_tests/s3.sl:Passed	0.282573
-	./open_tests/three.sl:Passed	0.575607
-	./open_tests/tutorial.sl:Passed	0.258999
+	./open_bv_tests/100_100.sl:Invalid format	0.221264
+	./open_bv_tests/106_100.sl:Invalid format	0.216712
+	./open_bv_tests/107_100.sl:Invalid format	0.207194
+	./open_bv_tests/10_100.sl:Invalid format	0.207684
+	./open_bv_tests/115_100.sl:Invalid format	0.209603
+	./open_bv_tests/118_100.sl:Invalid format	0.214249
+	./open_bv_tests/122_100.sl:Invalid format	0.216585
+	./open_bv_tests/125_100.sl:Invalid format	0.215201
+	./open_bv_tests/138_100.sl:Invalid format	0.216534
+	./open_bv_tests/144_100.sl:Invalid format	0.214689
+	./open_bv_tests/147_100.sl:Invalid format	0.215870
+	./open_bv_tests/150_100.sl:Invalid format	0.217785
+	./open_bv_tests/17_100.sl:Invalid format	0.218957
+	./open_bv_tests/18_100.sl:Invalid format	0.216508
+	./open_bv_tests/26_100.sl:Invalid format	0.218999
+	./open_bv_tests/28_100.sl:Invalid format	0.225125
+	./open_bv_tests/31_100.sl:Invalid format	0.214608
+	./open_bv_tests/40_100.sl:Invalid format	0.219568
+	./open_bv_tests/46_100.sl:Invalid format	0.219215
+	./open_bv_tests/55_100.sl:Invalid format	0.216782
+	./open_bv_tests/59_100.sl:Invalid format	0.219994
+	./open_bv_tests/61_100.sl:Invalid format	0.215731
+	./open_bv_tests/62_100.sl:Invalid format	0.216833
+	./open_bv_tests/66_100.sl:Invalid format	0.220353
+	./open_bv_tests/81_100.sl:Invalid format	0.214320
+	./open_bv_tests/83_100.sl:Invalid format	0.216543
+	./open_bv_tests/87_100.sl:Invalid format	0.216699
+	./open_bv_tests/92_100.sl:Invalid format	0.220727
+	./open_bv_tests/93_100.sl:Invalid format	0.221146
+	./open_bv_tests/97_100.sl:Invalid format	0.222317
+	./open_tests/array_search_10.sl:Passed	0.239987
+	./open_tests/array_search_11.sl:Passed	0.256691
+	./open_tests/array_search_12.sl:Passed	0.298000
+	./open_tests/array_search_13.sl:Passed	0.279785
+	./open_tests/array_search_14.sl:Passed	0.290040
+	./open_tests/array_search_15.sl:Passed	0.299474
+	./open_tests/array_search_2.sl:Passed	0.177154
+	./open_tests/array_search_3.sl:Passed	0.183025
+	./open_tests/array_search_4.sl:Passed	0.192157
+	./open_tests/array_search_5.sl:Passed	0.195453
+	./open_tests/array_search_6.sl:Passed	0.203931
+	./open_tests/array_search_7.sl:Passed	0.210459
+	./open_tests/array_search_8.sl:Passed	0.220749
+	./open_tests/array_search_9.sl:Passed	0.230999
+	./open_tests/max10.sl:Passed	0.220214
+	./open_tests/max12.sl:Passed	0.311080
+	./open_tests/max13.sl:Passed	0.355805
+	./open_tests/max14.sl:Passed	0.513408
+	./open_tests/max15.sl:Passed	0.681176
+	./open_tests/max2.sl:Passed	0.621010
+	./open_tests/max3.sl:Passed	0.179999
+	./open_tests/max4.sl:Passed	0.181137
+	./open_tests/max5.sl:Passed	0.190045
+	./open_tests/max6.sl:Passed	0.198907
+	./open_tests/max7.sl:Passed	0.202010
+	./open_tests/max8.sl:Passed	0.206782
+	./open_tests/max9.sl:Passed	0.218435
+	./open_tests/max_11.sl:Passed	0.272065
+	./open_tests/s1.sl:Passed	0.185999
+	./open_tests/s2.sl:Passed	0.179808
+	./open_tests/s3.sl:Passed	0.182552
+	./open_tests/three.sl:Passed	0.380001
+	./open_tests/tutorial.sl:Passed	0.176999
