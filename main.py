@@ -20,6 +20,7 @@ if __name__ == '__main__':
   productions = {product[0]:product[2] for product in fnExpr[4]}  
 
   ans = construct.solve(fnExpr[1], fnDef, productions, constraints, checker)
+  # ans = None
   if ans == None:
     ans = pattern.solve(fnExpr[1], fnDef, productions, checker)
     if ans != None:
