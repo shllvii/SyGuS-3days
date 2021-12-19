@@ -28,7 +28,7 @@ To be specific, we design a function `generate`, which takes a tuple `(ls, args,
 * `ls` represents the list, such as `[x2, x3, x4, x5]` for `max5.sl` and `[(x1, 0), (x2, 1), (x3, 2)` for `array_search_3.sl`;
 * `args` represents the initial arguments for the enumeration, such as `(x1)` for `max5.sl` and `(k1, 4)` for `array_search_3.sl`;
 * `cond` represents the condition generator for the `ite` of each enumeration. It consists of operations and elements in `head(ls)` (which may be a tuple) and arguments. For example, the `cond` is `lambda hd, args: ['<=', hd, args[0]]` for `maxk.sl` cases.
-* `f_then` and `f_else` determines the `then of the `ite`, 
+* `f_then` and `f_else` determines the generator for the then/else of `
 
 ## From TA
 A simple framework for Syntax-Guided Synthesis problem.
